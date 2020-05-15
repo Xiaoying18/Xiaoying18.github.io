@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Title for test</title>
+    <url>/2020/05/15/Title%20for%20test/</url>
+    <content><![CDATA[<h1 id="Title-for-test"><a href="#Title-for-test" class="headerlink" title="Title for test"></a>Title for test</h1><h2 id="second-title-for-test"><a href="#second-title-for-test" class="headerlink" title="second title for test"></a>second title for test</h2><p>This is a test for uploading article on my blog.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>My New Post</title>
     <url>/2020/03/31/My-New-Post/</url>
     <content><![CDATA[<p>This is a test file. Hope my blog runs perfectly. ^-^</p>
