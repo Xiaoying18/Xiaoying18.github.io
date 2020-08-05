@@ -66,6 +66,12 @@
 <p>这个题的代码，基本就是DFS深度搜索的框架了，可以参考着记一下。        </p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+      </tags>
   </entry>
   <entry>
     <title>进程和线程</title>
