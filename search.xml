@@ -1,70 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>进程和线程</title>
-    <url>/2020/07/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><h2 id="一、对进程的理解"><a href="#一、对进程的理解" class="headerlink" title="一、对进程的理解"></a>一、对进程的理解</h2><h3 id="（一）从哪里来："><a href="#（一）从哪里来：" class="headerlink" title="（一）从哪里来："></a>（一）从哪里来：</h3><p>​            一个程序被运行，其代码从磁盘中到内存中，就开启了一个进程。</p>
-<h4 id="程序和进程的关系可以理解为："><a href="#程序和进程的关系可以理解为：" class="headerlink" title="* 程序和进程的关系可以理解为："></a>* 程序和进程的关系可以理解为：</h4><p>​                        可以把进程当作程序的一个实例。</p>
-<p>​                        ① 一个程序可以有很多个实例进程（大部分程序）</p>
-<p>​                                    比如：word，记事本， 浏览器，etc.，每次开启这个程序，就会出现一个新的实例进程。</p>
-<p>​                        ② 一个程序也可能只有一个实例进程</p>
-<p>​                                    比如：网易云音乐，360安全卫士等，这些程序启动一个再启动一个，也不会出现第二个进程。</p>
-<h3 id="（二）作用："><a href="#（二）作用：" class="headerlink" title="（二）作用："></a>（二）作用：</h3><p>​            加载指令、管理内存、管理IO。</p>
-<h3 id="（三）是最小的资源分配单位。"><a href="#（三）是最小的资源分配单位。" class="headerlink" title="（三）是最小的资源分配单位。"></a>（三）是最小的资源分配单位。</h3><h3 id="（四）跟线程的关系"><a href="#（四）跟线程的关系" class="headerlink" title="（四）跟线程的关系"></a>（四）跟线程的关系</h3><p>​            进程是线程的容器。线程存在于进程内，是进程的一个子集。</p>
-<h3 id="（五）特点："><a href="#（五）特点：" class="headerlink" title="（五）特点："></a>（五）特点：</h3><ol>
-<li><p>​    基本上相互独立</p>
-</li>
-<li><p>​    拥有共享资源</p>
-<p>​        如：内存空间</p>
-<p>​                供进程内的线程使用。</p>
-</li>
-<li><p>量级：</p>
-<p>​        进程量级比线程高一些，上下文切换成本较线程高。</p>
-<p>​        </p>
-</li>
-</ol>
-<h3 id="（六）进程间通信："><a href="#（六）进程间通信：" class="headerlink" title="（六）进程间通信："></a>（六）进程间通信：</h3><p>​            较为复杂。</p>
-<h4 id="1-同一台机器上"><a href="#1-同一台机器上" class="headerlink" title="1. 同一台机器上"></a>1. 同一台机器上</h4><p>​                        IPC（Inter-process communication）</p>
-<h4 id="2-不同机器上"><a href="#2-不同机器上" class="headerlink" title="2. 不同机器上"></a>2. 不同机器上</h4><p>​                        需要通过网络，并遵守共同协议，如：HTTP协议。</p>
-<h2 id="二、对线程的理解"><a href="#二、对线程的理解" class="headerlink" title="二、对线程的理解"></a>二、对线程的理解</h2><h3 id="（一）从哪里来：-1"><a href="#（一）从哪里来：-1" class="headerlink" title="（一）从哪里来："></a>（一）从哪里来：</h3><p>​            一个进程可以分为一个到多个线程</p>
-<h3 id="（二）线程本质上到底是什么"><a href="#（二）线程本质上到底是什么" class="headerlink" title="（二）线程本质上到底是什么"></a>（二）线程本质上到底是什么</h3><p>​            线程是一个指令流。</p>
-<h3 id="（三）作用："><a href="#（三）作用：" class="headerlink" title="（三）作用："></a>（三）作用：</h3><p>​            一个线程，将指令流中的一条条指令，<strong><u>以一定顺序</u></strong>，交给CPU执行。</p>
-<p>​            即：线程是用来执行指令的。</p>
-<h3 id="（四）是最小的调度单位"><a href="#（四）是最小的调度单位" class="headerlink" title="（四）是最小的调度单位"></a>（四）是最小的调度单位</h3><h3 id="（五）跟进程的关系："><a href="#（五）跟进程的关系：" class="headerlink" title="（五）跟进程的关系："></a>（五）跟进程的关系：</h3><p>​            进程是线程的容器。线程存在于进程内，是进程的一个子集。</p>
-<h3 id="（六）线程间通信："><a href="#（六）线程间通信：" class="headerlink" title="（六）线程间通信："></a>（六）线程间通信：</h3><p>​            相对简单。</p>
-<p>​            共享同一个进程中的内存资源。</p>
-<p>​                        如：多个线程可以访问同一个共享变量。</p>
-<h3 id="（七）特点"><a href="#（七）特点" class="headerlink" title="（七）特点"></a>（七）特点</h3><ol>
-<li><p>量级：</p>
-<p>​        相对轻量级，上下文切换成本较低。</p>
-</li>
-</ol>
-<h2 id="三、程序、进程、线程的关系图解"><a href="#三、程序、进程、线程的关系图解" class="headerlink" title="三、程序、进程、线程的关系图解"></a>三、程序、进程、线程的关系图解</h2><img src="D:\Typora 笔记\java并发 复习\pic\程序、进程、线程.PNG" style="zoom: 33%;" />
-
-<p><code>注意</code></p>
-<ol>
-<li><p><code>每开启一个程序，就有了一个进程。</code></p>
-<p>​    <code>有些程序可以多次开启，所以可以有多个进程，比如开启多个word</code></p>
-<p>​    <code>有些程序只能开启一次，重复开启不会拥有新的进程，比如网易云音乐</code></p>
-</li>
-</ol>
-<p>[^以上内容均为个人理解，若有问题，欢迎指正交流~~  <a href="mailto:xiaoyingblog@163.com">xiaoyingblog@163.com</a> ^_^]: </p>
-<p>​        </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Title for test</title>
-    <url>/2020/05/15/Title%20for%20test/</url>
-    <content><![CDATA[<h1 id="Title-for-test"><a href="#Title-for-test" class="headerlink" title="Title for test"></a>Title for test</h1><h2 id="second-title-for-test"><a href="#second-title-for-test" class="headerlink" title="second title for test"></a>second title for test</h2><p>This is a test for uploading article on my blog.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>My New Post</title>
-    <url>/2020/03/31/My-New-Post/</url>
-    <content><![CDATA[<p>This is a test file. Hope my blog runs perfectly. ^-^</p>
-]]></content>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>test pic</title>
+      <link href="/2020/07/25/test-pic/"/>
+      <url>/2020/07/25/test-pic/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2020/07/25/test-pic/D:%5Chexo%5Cxiaoying18.github.io%5Csource_posts%5Ctest-pic%5C%E7%A8%8B%E5%BA%8F%E3%80%81%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B.PNG" alt></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进程和线程</title>
+      <link href="/2020/07/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/"/>
+      <url>/2020/07/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><h2 id="一、对进程的理解"><a href="#一、对进程的理解" class="headerlink" title="一、对进程的理解"></a>一、对进程的理解</h2><h3 id="（一）从哪里来："><a href="#（一）从哪里来：" class="headerlink" title="（一）从哪里来："></a>（一）从哪里来：</h3><p>​            一个程序被运行，其代码从磁盘中到内存中，就开启了一个进程。</p><h4 id="程序和进程的关系可以理解为："><a href="#程序和进程的关系可以理解为：" class="headerlink" title="* 程序和进程的关系可以理解为："></a>* 程序和进程的关系可以理解为：</h4><p>​                        可以把进程当作程序的一个实例。</p><p>​                        ① 一个程序可以有很多个实例进程（大部分程序）</p><p>​                                    比如：word，记事本， 浏览器，etc.，每次开启这个程序，就会出现一个新的实例进程。</p><p>​                        ② 一个程序也可能只有一个实例进程</p><p>​                                    比如：网易云音乐，360安全卫士等，这些程序启动一个再启动一个，也不会出现第二个进程。</p><h3 id="（二）作用："><a href="#（二）作用：" class="headerlink" title="（二）作用："></a>（二）作用：</h3><p>​            加载指令、管理内存、管理IO。</p><h3 id="（三）是最小的资源分配单位。"><a href="#（三）是最小的资源分配单位。" class="headerlink" title="（三）是最小的资源分配单位。"></a>（三）是最小的资源分配单位。</h3><h3 id="（四）跟线程的关系"><a href="#（四）跟线程的关系" class="headerlink" title="（四）跟线程的关系"></a>（四）跟线程的关系</h3><p>​            进程是线程的容器。线程存在于进程内，是进程的一个子集。</p><h3 id="（五）特点："><a href="#（五）特点：" class="headerlink" title="（五）特点："></a>（五）特点：</h3><ol><li><p>​    基本上相互独立</p></li><li><p>​    拥有共享资源</p><p>​        如：内存空间</p><p>​                供进程内的线程使用。</p></li><li><p>量级：</p><p>​        进程量级比线程高一些，上下文切换成本较线程高。</p><p>​        </p></li></ol><h3 id="（六）进程间通信："><a href="#（六）进程间通信：" class="headerlink" title="（六）进程间通信："></a>（六）进程间通信：</h3><p>​            较为复杂。</p><h4 id="1-同一台机器上"><a href="#1-同一台机器上" class="headerlink" title="1. 同一台机器上"></a>1. 同一台机器上</h4><p>​                        IPC（Inter-process communication）</p><h4 id="2-不同机器上"><a href="#2-不同机器上" class="headerlink" title="2. 不同机器上"></a>2. 不同机器上</h4><p>​                        需要通过网络，并遵守共同协议，如：HTTP协议。</p><h2 id="二、对线程的理解"><a href="#二、对线程的理解" class="headerlink" title="二、对线程的理解"></a>二、对线程的理解</h2><h3 id="（一）从哪里来：-1"><a href="#（一）从哪里来：-1" class="headerlink" title="（一）从哪里来："></a>（一）从哪里来：</h3><p>​            一个进程可以分为一个到多个线程</p><h3 id="（二）线程本质上到底是什么"><a href="#（二）线程本质上到底是什么" class="headerlink" title="（二）线程本质上到底是什么"></a>（二）线程本质上到底是什么</h3><p>​            线程是一个指令流。</p><h3 id="（三）作用："><a href="#（三）作用：" class="headerlink" title="（三）作用："></a>（三）作用：</h3><p>​            一个线程，将指令流中的一条条指令，<strong><u>以一定顺序</u></strong>，交给CPU执行。</p><p>​            即：线程是用来执行指令的。</p><h3 id="（四）是最小的调度单位"><a href="#（四）是最小的调度单位" class="headerlink" title="（四）是最小的调度单位"></a>（四）是最小的调度单位</h3><h3 id="（五）跟进程的关系："><a href="#（五）跟进程的关系：" class="headerlink" title="（五）跟进程的关系："></a>（五）跟进程的关系：</h3><p>​            进程是线程的容器。线程存在于进程内，是进程的一个子集。</p><h3 id="（六）线程间通信："><a href="#（六）线程间通信：" class="headerlink" title="（六）线程间通信："></a>（六）线程间通信：</h3><p>​            相对简单。</p><p>​            共享同一个进程中的内存资源。</p><p>​                        如：多个线程可以访问同一个共享变量。</p><h3 id="（七）特点"><a href="#（七）特点" class="headerlink" title="（七）特点"></a>（七）特点</h3><ol><li><p>量级：</p><p>​        相对轻量级，上下文切换成本较低。</p></li></ol><h2 id="三、程序、进程、线程的关系图解"><a href="#三、程序、进程、线程的关系图解" class="headerlink" title="三、程序、进程、线程的关系图解"></a>三、程序、进程、线程的关系图解</h2><img src="/2020/07/24/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/Typora 笔记\java并发 复习\pic\程序、进程、线程.PNG" style="zoom: 33%;"><p><code>注意</code></p><ol><li><p><code>每开启一个程序，就有了一个进程。</code></p><p>​    <code>有些程序可以多次开启，所以可以有多个进程，比如开启多个word</code></p><p>​    <code>有些程序只能开启一次，重复开启不会拥有新的进程，比如网易云音乐</code></p></li></ol><p>[^以上内容均为个人理解，若有问题，欢迎指正交流~~  <a href="mailto:xiaoyingblog@163.com">xiaoyingblog@163.com</a> ^_^]: </p><p>​        </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 并发编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Title for test</title>
+      <link href="/2020/05/15/Title%20for%20test/"/>
+      <url>/2020/05/15/Title%20for%20test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Title-for-test"><a href="#Title-for-test" class="headerlink" title="Title for test"></a>Title for test</h1><h2 id="second-title-for-test"><a href="#second-title-for-test" class="headerlink" title="second title for test"></a>second title for test</h2><p>This is a test for uploading article on my blog.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>My New Post</title>
+      <link href="/2020/03/31/My-New-Post/"/>
+      <url>/2020/03/31/My-New-Post/</url>
+      
+        <content type="html"><![CDATA[<p>This is a test file. Hope my blog runs perfectly. ^-^</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
